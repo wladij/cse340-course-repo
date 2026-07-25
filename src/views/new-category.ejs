@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+
+<main>
+
+    <h1>Create New Category</h1>
+
+    <% const messages = flash(); %>
+    <% Object.keys(messages).forEach(type => { %>
+        <% if (messages[type].length > 0) { %>
+            <% messages[type].forEach(msg => { %>
+                <div class="alert <%= type %>">
+                    <%= msg %>
+                </div>
+            <% }); %>
+        <% } %>
+    <% }); %>
+
+    <form action="/new-category" method="POST" class="organization-form">
+
+        <div class="form-group">
+            <label for="category_name">Category Name</label>
+
+            <input
+                type="text"
+                id="category_name"
+                name="category_name"
+                maxlength="100"
+                required
+                placeholder="Enter category name"
+            >
+        </div>
+
+        <button type="submit">
+            Create Category
+        </button>
+
+    </form>
+
+</main>
+
+<%- include('partials/footer') %>

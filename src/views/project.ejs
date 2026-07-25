@@ -1,5 +1,9 @@
 <%- include('partials/header') %>
 <main>
+    
+    <a href="/edit-project/<%= project.project_id %>" class="btn">
+    Edit Project
+</a>
     <h1><%= project.title %></h1>
     <p><strong>Description:</strong> <%= project.description %></p>
     <p><strong>Date:</strong> <%= project.date %></p>
@@ -14,12 +18,12 @@
         <strong>Categories:</strong> 
         <% categories.forEach(category => { %>
 
-            <a href="/category/<%= category.category_id %>">
+            <p><a href="/category/<%= category.category_id %>">
                 <%= category.category_name %>
-            </a>
+            </a></p>
 
         <% }) %>
     </p>
-
+    <a href="/assign-categories/<%= project.project_id %>" class="btn">Edit Categories</a>
 </main>
 <%- include('partials/footer') %>

@@ -100,7 +100,186 @@ main strong {
     color: #0d47a1;
 }
 
+/* Flash message styles */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.alert.success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+.alert.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+.alert.warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+.alert.info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
 
+/* ---------- Organization Form ---------- */
+
+.organization-form {
+    max-width: 650px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+}
+
+.organization-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.organization-form label {
+    display: block;
+    margin-bottom: .5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.organization-form input,
+.organization-form textarea {
+    width: 100%;
+    padding: .9rem 1rem;
+    font-size: 1rem;
+    font-family: inherit;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fafafa;
+    transition: all .25s ease;
+    box-sizing: border-box;
+}
+
+.organization-form textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.organization-form input:focus,
+.organization-form textarea:focus {
+    outline: none;
+    border-color: #0d6efd;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(13,110,253,.15);
+}
+
+.organization-form input::placeholder,
+.organization-form textarea::placeholder {
+    color: #999;
+}
+
+.organization-form button {
+    width: 100%;
+    padding: 1rem;
+    background: #5070a1;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background .25s ease, transform .2s ease;
+}
+
+.organization-form button:hover {
+    background: #174180;
+    transform: translateY(-2px);
+}
+
+.organization-form button:active {
+    transform: translateY(0);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+    .organization-form {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+}
+
+/* ===== Action Buttons ===== */
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    background-color: #0d6efd;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.btn:focus {
+    outline: 3px solid rgba(13, 110, 253, 0.3);
+    outline-offset: 2px;
+}
+
+/* ===== Variants ===== */
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-success {
+    background-color: #198754;
+}
+
+.btn-success:hover {
+    background-color: #157347;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #bb2d3b;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 768px) {
+    .btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0.75rem 0;
+    }
+}
 
 /* ===========================
    Footer

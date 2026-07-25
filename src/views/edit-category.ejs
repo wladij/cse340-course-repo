@@ -1,0 +1,43 @@
+<%- include('partials/header') %>
+
+<main>
+
+    <h1>Edit Category</h1>
+
+    <% const messages = flash(); %>
+    <% Object.keys(messages).forEach(type => { %>
+        <% if (messages[type].length > 0) { %>
+            <% messages[type].forEach(msg => { %>
+                <div class="alert <%= type %>">
+                    <%= msg %>
+                </div>
+            <% }); %>
+        <% } %>
+    <% }); %>
+
+    <form action="/edit-category/<%= categoryDetails.category_id %>" method="POST" class="organization-form">
+
+        <div class="form-group">
+
+            <label for="category_name">Category Name</label>
+
+            <input
+                type="text"
+                id="category_name"
+                name="category_name"
+                value="<%= categoryDetails.category_name %>"
+                maxlength="100"
+                required
+            >
+
+        </div>
+
+        <button type="submit">
+            Update Category
+        </button>
+
+    </form>
+
+</main>
+
+<%- include('partials/footer') %>

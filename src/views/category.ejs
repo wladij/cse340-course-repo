@@ -1,7 +1,9 @@
 <%- include('partials/header') %>
 <main>
     <h1><%= category.category_name %></h1>
-
+    <a href="/edit-category/<%= category.category_id %>" class="btn">
+    Edit Category
+</a>
     <ul>
         <% projects.forEach(project => { %>
             <li>
