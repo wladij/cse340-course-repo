@@ -2,9 +2,12 @@
 <main>
     <h1><%= title %></h1>
     <!-- Put your page-specific content here -->
-    <a href="/new-category" class="btn">
-    Create New Category
-</a>
+    
+    <p>
+        <% if (user && user.role_name === 'admin') { %>
+            <a href="/new-category" class="btn">Create New Category</a>
+        <% } %>
+    </p>
 
 <ul>
     <% categories.forEach(category => { %>

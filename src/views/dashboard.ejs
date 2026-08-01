@@ -3,10 +3,15 @@
 <main>
     <h1><%= title %></h1>
 
-    <h2>Dashboard</h2>
     <p>Name: <%= name %></p>
     <p>Username: <%= email %></p>
 
+
+    <p>
+        <% if (user && user.role_name === 'admin') { %>
+            <a href="/users" class="btn">Users</a>
+        <% } %>
+    </p>
 </main>
 
 <%- include('partials/footer') %>
