@@ -22,6 +22,15 @@ import {
     processEditCategory,
     categoryValidation
 } from './controllers/categories.js';
+import {
+    showUserRegistrationForm,
+    processUserRegistrationForm,
+    showLoginForm,
+    processLoginForm,
+    processLogout,
+    requireLogin,
+    showDashboard
+} from './controllers/users.js';
 
 
 const router = express.Router();
@@ -46,7 +55,15 @@ router.post('/edit-project/:id', projectValidation, processEditProject);
 router.get("/new-category", showNewCategory);
 router.post("/new-category", categoryValidation, processNewCategory);
 router.get("/edit-category/:id", showEditCategory);
-router.post("/edit-category/:id",categoryValidation, processEditCategory);
+router.post("/edit-category/:id", categoryValidation, processEditCategory);
+// User registration routes
+router.get('/register', showUserRegistrationForm);
+router.post('/register', processUserRegistrationForm);
+// User login routes
+router.get('/login', showLoginForm);
+router.post('/login', processLoginForm);
+router.get('/logout', processLogout);
+router.get('/dashboard', requireLogin, showDashboard);
 // error-handling routes
 router.get('/test-error', testErrorPage);
 
